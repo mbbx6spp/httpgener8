@@ -1,4 +1,4 @@
-package ops.functionalo
+package functionalops.httpgener8
 
 import scalaz._
 import Scalaz._

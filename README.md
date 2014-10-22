@@ -6,7 +6,20 @@ Provide simple generators for types found when dealing with the HTTP protocol.
 
 ### Usage
 
-TODO:
+Generating HTTP codes and request/response headers can be done with the following:
+
+```scala
+
+import httpgener8._
+
+// create generator for HTTPResponse object from your favorite framework
+val genResponse = for {
+  c  <- genValidHttpStatusCode
+  hs <- Gen.listOfN(5, genStandardHttpResponseHeader)
+  ss <- Gen.listOfN(5, ...)
+} yield HTTPResponse(c, hs zip ss)
+
+```
 
 ### Prerequisites
 
